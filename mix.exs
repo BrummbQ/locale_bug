@@ -7,7 +7,7 @@ defmodule LocaleBug.Mixfile do
       version: "0.0.1",
       elixir: "~> 1.4",
       elixirc_paths: elixirc_paths(Mix.env),
-      compilers: [:phoenix, :gettext] ++ Mix.compilers,
+      compilers: [:phoenix, :gettext] ++ Mix.compilers ++ [:cldr],
       start_permanent: Mix.env == :prod,
       deps: deps()
     ]
@@ -38,7 +38,7 @@ defmodule LocaleBug.Mixfile do
       {:phoenix_live_reload, "~> 1.0", only: :dev},
       {:gettext, "~> 0.11"},
       {:cowboy, "~> 1.0"},
-      {:ex_cldr, "~> 1.0"}
+      {:ex_cldr, github: "kipcole9/cldr", override: true}
     ]
   end
 end
